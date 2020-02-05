@@ -1,0 +1,11 @@
+clear ; close all; clc
+width=23; %The width of domain in ordfilt2
+D = dir('*.jpg');
+for i = 1:length(D)
+    src_grey = rgb2gray(imread(D(i).name));
+    mask0 = ordfilt2(src_grey,1,ones(width,width));
+    mask1 = ordfilt2(mask0,median(1:width^2),ones(width,width));
+    dst=imcomplement(imbinarize(imsubtract(src_grey,mask1)));
+    imwrite(dst,[D(i).name(1:find('.'==D(i).name)-1),'_result.jpg']);
+    fprintf('Finished:%d\n',i);
+end
