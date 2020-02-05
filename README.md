@@ -11,3 +11,5 @@ Run 'main.m' in MATLAB. It will read in all the jpg images in the current folder
 3. Subtract this background from the original image.
 4. Binarization.
 ## Demo
+Due to unknowing error, the demo images cannot be uploaded to this repository.
+Maybe I will update it when the error disappears.
